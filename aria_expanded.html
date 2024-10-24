@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>My Website</title>
+</head>
+<body>
+    
+  <button aria-expanded="false" id="toggleButton">Show More Info</button>
+
+  <div id="moreInfo" style="display:none;">
+    <p> This is the additional information that can be expanded and collapsed. </p>
+  </div>
+  
+</body>
+</html>
+
+
+<script>
+  document.getElementById('toggleButton').addEventListener('click', function() {
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    
+    this.setAttribute('aria-expanded', !isExpanded);
+    
+    document.getElementById('moreInfo').style.display = isExpanded ? 'none' : 'block';
+  });
+  </script>
